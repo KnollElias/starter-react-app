@@ -1,11 +1,10 @@
-import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>This is the new Kitaluna Dashboard</h1>
+      <h1>Kita Luna Dasboard</h1>
     </div>
   );
 }
