@@ -1,11 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
 
+import Sidebar from './components/Sidebar/Sidebar';
+
 function App() {
   return (
     <div className="App">
-      <h1>Kita Luna Dasboard</h1>
-      <h1>Kita Luna Dasboard 320</h1>
+      <div className="sidebar">
+        <Sidebar />
+      </div>
+      <div className="main">
+        <h1>Kita Luna Dashboard</h1>
+        <h1>Kita Luna Dashboard</h1>
+        <h1>Kita Luna Dashboard none</h1>
+      </div>
     </div>
   );
 }

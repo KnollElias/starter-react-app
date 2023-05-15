@@ -1,5 +1,19 @@
 .App {
+  background-color: #F8EDC8;
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+}
+
+.main {
+  flex-grow: 1;
   text-align: center;
+}
+
+h1 {
+  font-weight: normal;
 }
 
 .App-logo {
@@ -26,13 +40,4 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
