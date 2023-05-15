@@ -12,7 +12,6 @@ function App() {
           <Sidebar />
         </div>
         <div className="main">
-          <h1>React App</h1>
           <Routes>
             <Route path="/cockpit" element={<Cockpit />} />
             {/* Add other routes here... */}

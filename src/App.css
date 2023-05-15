@@ -1,5 +1,4 @@
 .App {
-  background-color: #F8EDC8;
   display: flex;
 }
 
@@ -8,6 +7,7 @@
 }
 
 .main {
+  background-color: #F8EDC8;
   flex-grow: 1;
   text-align: center;
 }
