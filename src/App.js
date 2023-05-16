@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Sidebar from './components/Sidebar/Sidebar';
+import Header from './components/Header/Header';
 
 import Login from './screens/Login/Login';
 import Cockpit from './screens/Cockpit/Cockpit';
@@ -21,6 +22,7 @@ function App() {
           <Sidebar />
         </div>
         <div className="main">
+          <Header />
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/cockpit" element={<Cockpit />} />

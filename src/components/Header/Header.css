@@ -1,0 +1,29 @@
+.availableDiv {
+  width: 258px;
+  height: 72px;
+  left: 273px;
+  top: 116px;
+
+  background: #FF9BA6;
+  opacity: 0.56;
+  border-radius: 16px;
+}
+.notAvailableDiv {
+  width: 258px;
+  height: 72px;
+  left: 563px;
+  top: 116px;
+
+  background: #A59FFA;
+  opacity: 0.56;
+  border-radius: 16px;
+}
+.image {
+  width: 40px;
+  height: 40px;
+  left: 289px;
+  top: 132px;
+
+  background: #FF9BA6;
+  border-radius: 8px;
+}
