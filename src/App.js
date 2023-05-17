@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useRoutes } from 'react-router-dom';
 
 import Sidebar from './components/Sidebar/Sidebar';
 import Header from './components/Header/Header';
@@ -32,6 +32,7 @@ function App() {
             <Route path="/pinnwand" element={<Pinnwand />} />
             <Route path="/ueber" element={<Ueber />} />
             {/* <Route path="/logout" element={<Logout />} /> */}
+            <Route path="*" element={<Navigate to="/cockpit" />} /> {/* Catch-all route */}
           </Routes>
         </div>
       </div>
