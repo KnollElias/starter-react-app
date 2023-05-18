@@ -21,7 +21,10 @@ const Sidebar = () => {
   return (
     <div style={styles.borderContainer}>
       <div style={styles.border}></div>
-        <div style={styles.sidebar}>      <img src="./assets/Logo-Luna-bunt.png" alt="logo" style={styles.logoSidebar} />
+        <div style={styles.sidebar}>
+          <Link to="/cockpit">
+            <img src="./assets/Logo-Luna-bunt.png" alt="logo" style={styles.logoSidebar} />
+          </Link>
           <br />
           
           <SidebarElement to="/cockpit" img={"./assets/sidebar/Cockpit.png"} text={"Cockpit"} />
