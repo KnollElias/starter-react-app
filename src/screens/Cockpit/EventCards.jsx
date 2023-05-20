@@ -13,7 +13,9 @@ const EventCards = () => {
       setIsError(false);
       setIsLoading(true);
       try {
-        const response = await axios.get(`http://16.16.197.20:8080/events`);
+        console.log("Making REquest... ")
+        const response = await axios.get(`http://16.16.197.20:8080/system`);
+        console.log("Made REquest... ", response)
         setEvents(response.data);
       } catch (error) {
         console.error("Error fetching data", error);
