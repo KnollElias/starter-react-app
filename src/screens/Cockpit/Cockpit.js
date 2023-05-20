@@ -5,8 +5,8 @@ import EventCards from './EventCards'
 
 const Cockpit = () => {
   return (
-    <div>
-      <div style={{textAlign: "left", fontWeight: "bold", marginLeft: 20}}>Events Filtern</div>
+    <div style={{ width: "100%", backgroundColor: "#F8EDC8"}}>
+      <div style={{textAlign: "left", fontWeight: "bold", marginLeft: 20, }}>Events Filtern</div>
       <LocationSelector />
       <EventCards />
     </div>

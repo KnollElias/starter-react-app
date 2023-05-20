@@ -13,7 +13,7 @@ const EventCards = () => {
       setIsLoading(true);
       try {
         console.log("Making Request... ");
-        const response = await fetch('/events');
+const response = await fetch('/events');
         console.log("Made Request... ", response);
         if (response.ok) {
           const data = await response.json();

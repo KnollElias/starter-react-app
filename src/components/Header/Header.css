@@ -1,13 +1,17 @@
 .card {
-  margin: 20px;
-  margin-left: 20px;
-  margin-right: 0px;
+  width: 29%;
+  background-color: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 72px;
 
   padding: 10px;
   padding-left: 16px;
   padding-right: 16px;
 
-  /* flex: 1; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17,15 +21,20 @@
 }
 
 .image {
+  margin-left: -10px;
   width: 60px;
   height: 60px;
   border-radius: 8px;
 }
 
 .row {
-  /* background-color: blueviolet; */
+  flex-grow: 1;
+  padding: 20px;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90%;
+  background-color: #F8EDC8;
 }
 
 .textContainer {

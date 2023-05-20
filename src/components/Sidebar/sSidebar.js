@@ -30,11 +30,12 @@ const styles = {
     backgroundColor: 'white',
   },
   sidebar: {
+    flex: '0 0 20%',
     display: 'flex',
     flexDirection: 'column',
-    height: '100%', // adjust this as needed
-    justifyContent: 'space-between', // added this to create space between main content and footer
-  },
+    height: '100%',
+    justifyContent: 'space-between',
+  },  
   logoSidebar: {
     marginTop: "50px",
     marginBottom: "50px",
