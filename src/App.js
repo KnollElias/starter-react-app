@@ -19,7 +19,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="*" element={<MainRoutes />} /> {/* Catch-all route */}
+        <Route path="*" element={<MainRoutes />} />
       </Routes>
     </Router>
   );
@@ -29,26 +29,37 @@ function MainRoutes() {
   let location = useLocation();
   return (
     <div className="App">
-      {location.pathname !== '/login' && (
+      {location.pathname !== '/login' ? (
         <>
           <div className="sidebar">
             <Sidebar />
           </div>
           <div className="main">
             <Header />
+            <Routes>
+              <Route path="/cockpit" element={<Cockpit />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/speiseplan" element={<Speiseplan />} />
+              <Route path="/dienstplan" element={<Dienstplan />} />
+              <Route path="/pinnwand" element={<Pinnwand />} />
+              <Route path="/ueber" element={<Ueber />} />
+              {/* <Route path="/logout" element={<Logout />} /> */}
+              <Route path="*" element={<Navigate to="/cockpit" />} />
+            </Routes>
           </div>
         </>
+      ) : (
+        <Routes>
+          <Route path="/cockpit" element={<Cockpit />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/speiseplan" element={<Speiseplan />} />
+          <Route path="/dienstplan" element={<Dienstplan />} />
+          <Route path="/pinnwand" element={<Pinnwand />} />
+          <Route path="/ueber" element={<Ueber />} />
+          {/* <Route path="/logout" element={<Logout />} /> */}
+          <Route path="*" element={<Navigate to="/cockpit" />} />
+        </Routes>
       )}
-      <Routes>
-        <Route path="/cockpit" element={<Cockpit />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/speiseplan" element={<Speiseplan />} />
-        <Route path="/dienstplan" element={<Dienstplan />} />
-        <Route path="/pinnwand" element={<Pinnwand />} />
-        <Route path="/ueber" element={<Ueber />} />
-        {/* <Route path="/logout" element={<Logout />} /> */}
-        <Route path="*" element={<Navigate to="/cockpit" />} />
-      </Routes>
     </div>
   );
 }
