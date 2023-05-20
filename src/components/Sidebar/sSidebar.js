@@ -26,11 +26,11 @@ const styles = {
     height: "100vh", 
   },
   border: {
-    flex: '0 0 20%', 
+    flex: '0 0 10%', 
     backgroundColor: 'white',
   },
   sidebar: {
-    flex: '0 0 20%',
+    flex: '0 0 80%',  // Adjusted from 60% to 80%
     display: 'flex',
     flexDirection: 'column',
     height: '100%',

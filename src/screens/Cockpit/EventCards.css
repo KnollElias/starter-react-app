@@ -29,7 +29,10 @@
     width: 60%;
   }
   
-  .event-name,
+  .event-name {
+    color: black;
+    font-weight: bold;
+  }
   .event-time {
     color: black;
   }
