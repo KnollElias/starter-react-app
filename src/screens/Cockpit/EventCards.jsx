@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './EventCards.css'; 
+import './EventCards.css';
 
 const EventCards = () => {
   const [events, setEvents] = useState([]);
@@ -13,20 +12,24 @@ const EventCards = () => {
       setIsError(false);
       setIsLoading(true);
       try {
-        console.log("Making REquest... ")
-        const response = await axios.get(`http://16.16.197.20:8080/system`);
-        console.log("Made REquest... ", response)
-        setEvents(response.data);
+        console.log("Making Request... ");
+        const response = await fetch('/events');
+        console.log("Made Request... ", response);
+        if (response.ok) {
+          const data = await response.json();
+          setEvents(data);
+        } else {
+          const errorStatus = response.status;
+          throw new Error(`Failed to fetch data. Status: ${errorStatus}`);
+        }
       } catch (error) {
         console.error("Error fetching data", error);
         setIsError(true);
-        setErrorMessage(
-          `Status: ${error.response?.status || "unknown"} - ${error.response?.data?.message || "An error occurred while fetching data."} - Error: ${JSON.stringify(error)}`
-        );
-        
+        setErrorMessage(error.message || 'Unknown error occurred');
       }
       setIsLoading(false);
-    }
+    };
+
     fetchData();
   }, []);
 
@@ -36,8 +39,8 @@ const EventCards = () => {
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        events.map((event, index) => (
-          <div key={index} className="event-card">
+        events.map((event) => (
+          <div key={event._id} className="event-card">
             <img className="event-image" src="Your_image_source" alt="event" />
             <div className="event-details">
               <p className="event-name">{event.name}</p>
@@ -49,6 +52,6 @@ const EventCards = () => {
       )}
     </div>
   );
-}
+};
 
 export default EventCards;
