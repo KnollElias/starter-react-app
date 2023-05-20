@@ -36,7 +36,7 @@ const Sidebar = () => {
             <SidebarElement to="/ueber" img={"./assets/sidebar/Cockpit.png"} text={"Über Kita Luna"} />
         </div>
         <div style={styles.footer}>
-            <SidebarElement to="/logout" img={"./assets/sidebar/Logout.png"} text={"Log Out"} last={true} />
+            <SidebarElement to="/login" img={"./assets/sidebar/Logout.png"} text={"Log Out"} last={true} />
         </div>
     </div>
       <div style={styles.border}></div>
