@@ -21,20 +21,24 @@ const Sidebar = () => {
   return (
     <div style={styles.borderContainer}>
       <div style={styles.border}></div>
-        <div style={styles.sidebar}>
-          <Link to="/cockpit">
-            <img src="./assets/Logo-Luna-bunt.png" alt="logo" style={styles.logoSidebar} />
-          </Link>
-          <br />
-          
-          <SidebarElement to="/cockpit" img={"./assets/sidebar/Cockpit.png"} text={"Cockpit"} />
-          <SidebarElement to="/profile" img={"./assets/sidebar/Profile.png"} text={"Profile"} />
-          <SidebarElement to="/speiseplan" img={"./assets/sidebar/Speiseplan.png"} text={"Speiseplan"} />
-          <SidebarElement to="/dienstplan" img={"./assets/sidebar/Dienstplan.png"} text={"Dienstplan"} />
-          <SidebarElement to="/pinnwand" img={"./assets/sidebar/Pinnwand.png"} text={"Pinnwand"} />
-          <SidebarElement to="/ueber" img={"./assets/sidebar/Cockpit.png"} text={"Über Kita Luna"} />
-          <SidebarElement to="/logout" img={"./assets/sidebar/Logout.png"} text={"Log Out"} />
+      <div style={styles.sidebar}>
+        <div style={styles.mainContent}>
+            <Link to="/cockpit">
+                <img src="./assets/Logo-Luna-bunt.png" alt="logo" style={styles.logoSidebar} />
+            </Link>
+            <br />
+
+            <SidebarElement to="/cockpit" img={"./assets/sidebar/Cockpit.png"} text={"Cockpit"} />
+            <SidebarElement to="/profile" img={"./assets/sidebar/Profile.png"} text={"Profile"} />
+            <SidebarElement to="/speiseplan" img={"./assets/sidebar/Speiseplan.png"} text={"Speiseplan"} />
+            <SidebarElement to="/dienstplan" img={"./assets/sidebar/Dienstplan.png"} text={"Dienstplan"} />
+            <SidebarElement to="/pinnwand" img={"./assets/sidebar/Pinnwand.png"} text={"Pinnwand"} />
+            <SidebarElement to="/ueber" img={"./assets/sidebar/Cockpit.png"} text={"Über Kita Luna"} />
         </div>
+        <div style={styles.footer}>
+            <SidebarElement to="/logout" img={"./assets/sidebar/Logout.png"} text={"Log Out"} last={true} />
+        </div>
+    </div>
       <div style={styles.border}></div>
     </div>
   );

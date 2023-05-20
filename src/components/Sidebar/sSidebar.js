@@ -30,8 +30,10 @@ const styles = {
     backgroundColor: 'white',
   },
   sidebar: {
-    flex: '0 0 60%',
-    backgroundColor: "transparent",
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%', // adjust this as needed
+    justifyContent: 'space-between', // added this to create space between main content and footer
   },
   logoSidebar: {
     marginTop: "50px",
