@@ -1,7 +1,7 @@
 // server.js
 const testing = false;
 let obj = {
-  uri: "http://16.16.197.20:8080",
+  uri: "http://16.16.168.18:8080",
 };
 
 if (testing) { // For local development
