@@ -1,7 +1,7 @@
 {
   "name": "starter-react-app",
   "version": "0.1.0",
-  "proxy": "http://16.16.168.18:8980",
+  "proxy": "http://16.16.168.18:8080",
   "private": true,
   "scripts": {
     "start": "node server.js",
