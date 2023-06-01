@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import uri from "../../service/server";
+import objectFilter from "filtered-object";
 const BASE_URL = uri.uri;
 
 const Ueber = () => {
@@ -14,7 +15,7 @@ const Ueber = () => {
         if (response.ok) {
           const data = await response.json();
           console.log("RESPONSE", data);
-          setEvents(data);
+          setEvents(objectFilter(data[0], "_id"));
         } else {
           const errorStatus = response.status;
           throw new Error(`Failed to fetch data. Status: ${errorStatus}`);
@@ -26,21 +27,31 @@ const Ueber = () => {
 
     fetchData();
   }, []);
-  console.log("DATA", events[0]);
+  console.log("DATA", Object.values(events).length);
   return (
     <div className="event-cards-container ">
-      {events[0] &&
-        Object.values(events[0]).map((event, index) => (
-                
+      {events &&
+        Object.values(events).map((event, index) => (
           <>
-            {event && event.name ? (
-              <div key={event._id} className="event-card">
+            {(Object.values(events).length % 6 === 0 || Object.values(events).length % 6 === 1)  ? (
+              <>
+                {event ? (
+                  <div key={index} className="event-card">
+                    <div className="event-details">
+                      <p className="event-name">{event.name}</p>
+                      <p className="event-type">{event.desc}</p>
+                    </div>
+                  </div>
+                ) : null}
+              </>
+            ) : (
+              <div key={event._id} className="event-card event-card-last-two">
                 <div className="event-details">
                   <p className="event-name">{event.name}</p>
                   <p className="event-type">{event.desc}</p>
                 </div>
               </div>
-            ) : null}
+            )}
           </>
         ))}
     </div>
