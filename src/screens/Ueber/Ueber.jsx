@@ -4,7 +4,15 @@ const BASE_URL = uri.uri;
 
 const Ueber = () => {
   return (
-    <div>Standort Daten</div>
+    <><div>Standort Daten</div>
+      Loc 1
+
+      Loc 2
+      Loc 3
+
+      ...
+    
+    </>
   )
 }
 
