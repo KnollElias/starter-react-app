@@ -41,6 +41,7 @@
     "express": "^4.17.3",
     "filtered-object": "^4.0.4",
     "http-proxy-middleware": "^2.0.6",
+    "react-hook-form": "^7.44.3",
     "react-router-dom": "^6.11.1",
     "yarn": "^1.22.19"
   },

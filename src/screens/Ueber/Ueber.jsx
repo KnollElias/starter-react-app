@@ -30,28 +30,35 @@ const Ueber = () => {
     fetchData();
   }, []);
   return (
-    <Grid container display={'grid'} sx={{
-      gridTemplateColumns: 'repeat( auto-fill, minmax( 370px , 1fr))',
-      padding: ' 0 1.4rem',
-      gap: '2.3rem',
-    }}>
+    <Grid
+      container
+      display={"grid"}
+      sx={{
+        gridTemplateColumns: "repeat( auto-fill, minmax( 370px , 1fr))",
+        padding: " 0 1.4rem",
+        gap: "2.3rem",
+      }}
+    >
       {events &&
         Object.values(events).map(({ name, desc }, index) => (
           <>
             {name ? (
-              // <div key={index} className="event-card">
-              //   <div className="event-details">
-              //     <p className="event-name ">{event.name}</p>
-              //     <p className="event-type">{event.desc}</p>
-              //   </div>
-              // </div>
-              <Grid item >
-                <CardComponent title={name} phoneNumber={desc.split('\n')[0]} emergencyNumber={desc.split('\n')[1]} postAddress={desc.split('\n')[3] + desc.split('\n')[4] + desc.split('\n')[5] + desc.split('\n')[6]} email={desc.split('\n')[8]} />
+              <Grid item>
+                <CardComponent
+                  title={name}
+                  phoneNumber={desc.split("\n")[0]}
+                  emergencyNumber={desc.split("\n")[1]}
+                  postAddress={
+                    desc.split("\n")[3] +
+                    desc.split("\n")[4] +
+                    desc.split("\n")[5] +
+                    desc.split("\n")[6]
+                  }
+                  email={desc.split("\n")[8]}
+                />
               </Grid>
             ) : null}
           </>
-
-
         ))}
     </Grid>
   );
