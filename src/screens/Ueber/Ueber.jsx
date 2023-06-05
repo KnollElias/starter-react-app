@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import uri from "../../service/server";
 import objectFilter from "filtered-object";
+import CardComponent from "../../components/Card";
+import { Grid } from "@mui/material";
 const BASE_URL = uri.uri;
 
 const Ueber = () => {
@@ -27,34 +29,31 @@ const Ueber = () => {
 
     fetchData();
   }, []);
-  console.log("DATA", Object.values(events).length);
   return (
-    <div className="event-cards-container ">
+    <Grid container display={'grid'} sx={{
+      gridTemplateColumns: 'repeat( auto-fill, minmax( 370px , 1fr))',
+      padding: ' 0 1.4rem',
+      gap: '2.3rem',
+    }}>
       {events &&
-        Object.values(events).map((event, index) => (
+        Object.values(events).map(({ name, desc }, index) => (
           <>
-            {(Object.values(events).length % 6 === 0 || Object.values(events).length % 6 === 1)  ? (
-              <>
-                {event ? (
-                  <div key={index} className="event-card">
-                    <div className="event-details">
-                      <p className="event-name">{event.name}</p>
-                      <p className="event-type">{event.desc}</p>
-                    </div>
-                  </div>
-                ) : null}
-              </>
-            ) : (
-              <div key={event._id} className="event-card event-card-last-two">
-                <div className="event-details">
-                  <p className="event-name">{event.name}</p>
-                  <p className="event-type">{event.desc}</p>
-                </div>
-              </div>
-            )}
+            {name ? (
+              // <div key={index} className="event-card">
+              //   <div className="event-details">
+              //     <p className="event-name ">{event.name}</p>
+              //     <p className="event-type">{event.desc}</p>
+              //   </div>
+              // </div>
+              <Grid item >
+                <CardComponent title={name} phoneNumber={desc.split('\n')[0]} emergencyNumber={desc.split('\n')[1]} postAddress={desc.split('\n')[3] + desc.split('\n')[4] + desc.split('\n')[5] + desc.split('\n')[6]} email={desc.split('\n')[8]} />
+              </Grid>
+            ) : null}
           </>
+
+
         ))}
-    </div>
+    </Grid>
   );
 };
 
