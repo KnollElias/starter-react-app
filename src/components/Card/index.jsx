@@ -21,12 +21,13 @@ import { useForm } from "react-hook-form";
     register,
     handleSubmit,
     watch,
+    trigger,
     formState: { errors },
   } = useForm();
 
   const [isEditButtonClicked, setIsEditButtonClicked] = React.useState(false);
   const onSubmit = ( data) => {
-    
+    trigger()
     setIsEditButtonClicked(false);
     console.log(data);
   };
@@ -34,8 +35,8 @@ console.log('İS EDİT BUTTON ', isEditButtonClicked);
   return (
     <Card sx={{ width: "100%", borderRadius: "1rem", position: "relative" }}>
       {isEditButtonClicked ? (
-        <form onSubmit={handleSubmit(onSubmit)} id="editForm">
-          <UpdateForm register={register} errors={errors} />{" "}
+        <form onSubmit={handleSubmit(onSubmit)} id= {"editForm" + title}>
+          <UpdateForm register={register} errors={errors} title={title} />{" "}
         </form>
       ) : (
         <Content
@@ -60,9 +61,11 @@ console.log('İS EDİT BUTTON ', isEditButtonClicked);
             type="submit"
             variant="text"
             sx={{ color: "black" }}
-            form="editForm"
+            onClick={() => {
+              setIsEditButtonClicked(false);
+            }}
           >
-            X
+           Go back
           </Button>
         ) : (
           <Button
