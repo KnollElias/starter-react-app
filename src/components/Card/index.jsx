@@ -31,7 +31,6 @@ import { useForm } from "react-hook-form";
     setIsEditButtonClicked(false);
     console.log(data);
   };
-console.log('İS EDİT BUTTON ', isEditButtonClicked);
   return (
     <Card sx={{ width: "100%", borderRadius: "1rem", position: "relative" }}>
       {isEditButtonClicked ? (
