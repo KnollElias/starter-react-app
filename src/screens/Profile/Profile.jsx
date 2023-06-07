@@ -21,7 +21,7 @@ const Profile = () => {
   const handleFilterName = async (event) => {
     const dummyUser = (await api_service.get("/users")).data;
     const filteredList = users.filter((user) => {
-      console.log(user, event.target.value);
+      //console.log(user, event.target.value);
       return user.name.toLowerCase().includes(event.target.value.toLowerCase());
     });
     setUsers(

@@ -10,7 +10,7 @@ import { EditButton } from "./CardIcons";
 import Content from "./Content";
 import UpdateForm from "./UpdateForm";
 import { useForm } from "react-hook-form";
- function CardComponent({
+function CardComponent({
   title,
   phoneNumber,
   emergencyNumber,
@@ -26,15 +26,15 @@ import { useForm } from "react-hook-form";
   } = useForm();
 
   const [isEditButtonClicked, setIsEditButtonClicked] = React.useState(false);
-  const onSubmit = ( data) => {
-    trigger()
+  const onSubmit = (data) => {
+    trigger();
     setIsEditButtonClicked(false);
-    console.log(data);
+    //console.log(data);
   };
   return (
     <Card sx={{ width: "100%", borderRadius: "1rem", position: "relative" }}>
       {isEditButtonClicked ? (
-        <form onSubmit={handleSubmit(onSubmit)} id= {"editForm" + title}>
+        <form onSubmit={handleSubmit(onSubmit)} id={"editForm" + title}>
           <UpdateForm register={register} errors={errors} title={title} />{" "}
         </form>
       ) : (
@@ -64,7 +64,7 @@ import { useForm } from "react-hook-form";
               setIsEditButtonClicked(false);
             }}
           >
-           Go back
+            Go back
           </Button>
         ) : (
           <Button
@@ -82,4 +82,4 @@ import { useForm } from "react-hook-form";
   );
 }
 
-export default React.memo(CardComponent)
+export default React.memo(CardComponent);

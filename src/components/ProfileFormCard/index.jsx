@@ -21,7 +21,7 @@ function ProfileFormCard() {
   const [isEditClicked, setIsEditClicked] = useState(false);
   const onSubmit = (data) => {
     trigger();
-    console.log(data);
+    //console.log(data);
   };
   return (
     <Card
@@ -33,28 +33,34 @@ function ProfileFormCard() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-around",
-        flexDirection:'column',
+        flexDirection: "column",
         padding: "1.3rem 3rem 0 3rem;",
         marginTop: "1rem",
       }}
     >
-      <Grid container flexDirection={'column'} alignItems={'center'} gap={2}>
-          <Grid item>
-              <Avatar
-                alt="Remy Sharp"
-                src="https://source.unsplash.com/random/?w=800&h=400"
-                sx={{ width: "5rem", height: "5rem" }}
-              />
-          </Grid>
-          <Grid item>
-            <Typography variant="body1" color="initial">Sanusi Jackson  </Typography>
-          </Grid>
-          <Grid item>
-           <Typography variant="body1" color="initial">8512121212121221</Typography>
-          </Grid>
-          <Grid item>
-           <Typography variant="body1" color="initial">mail</Typography>
-          </Grid>
+      <Grid container flexDirection={"column"} alignItems={"center"} gap={2}>
+        <Grid item>
+          <Avatar
+            alt="Remy Sharp"
+            src="https://source.unsplash.com/random/?w=800&h=400"
+            sx={{ width: "5rem", height: "5rem" }}
+          />
+        </Grid>
+        <Grid item>
+          <Typography variant="body1" color="initial">
+            Sanusi Jackson{" "}
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Typography variant="body1" color="initial">
+            8512121212121221
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Typography variant="body1" color="initial">
+            mail
+          </Typography>
+        </Grid>
       </Grid>
       <CardContent>
         <form onSubmit={handleSubmit(onSubmit)}>

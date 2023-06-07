@@ -1,3 +1,13 @@
-.container {
-  background-color: #F8EDC8;
+.filter-components-container {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid red;
+}
+
+#search-input-textfield {
+  width: 50%;
+  margin-right: 20px;
 }

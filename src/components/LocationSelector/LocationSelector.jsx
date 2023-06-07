@@ -1,11 +1,36 @@
-import React from 'react';
+import React, { useState } from "react";
 
-const LocationSelector = () => {
+//MUI Components
+import { Divider, Grid, TextField, Typography } from "@mui/material";
+import Tabs from "../../components/TabComponent";
+const LocationSelector = ({ selectedLocation, setSelectedLocation }) => {
+  const locationData = [
+    { label: "Alle", tab: "alle" },
+    { label: "Aesch", tab: "aesch" },
+    { label: "Breite", tab: "breite" },
+    { label: "St.Johan", tab: "stjohan" },
+  ];
+
+  const handleChangeLocation = (event, selectedValue) => {
+    setSelectedLocation(selectedValue);
+    console.log("selectedLocation", selectedLocation);
+  };
+
   return (
-    <div style={{textAlign: "left", marginLeft: 20, marginTop: 10, }}>
-      Alle | Aesch | Breite | St.Johan
-    </div>
+    <Grid container>
+      <Grid>
+        <Grid container>
+          <Grid item>
+            <Tabs
+              value={selectedLocation}
+              handleChange={handleChangeLocation}
+              tabs={locationData}
+            />
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
   );
-}
+};
 
 export default LocationSelector;
