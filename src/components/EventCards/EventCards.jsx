@@ -59,7 +59,6 @@ const EventCards = ({
       setEvents(referenceData);
     }
   }, [startDate, finishDate]);
-  console.log(filterByDate);
   return (
     <div className="event-cards-container">
       {isError && (
