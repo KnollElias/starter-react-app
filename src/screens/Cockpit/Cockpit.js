@@ -12,8 +12,8 @@ const Cockpit = () => {
 
   const [selectedLocation, setSelectedLocation] = useState("Alle")
   const [searchInput, setSearchInput] = useState("")
-  const [startDate, setStartDate] = useState({})
-  const [finishDate, setFinishDate] = useState({})
+  const [startDate, setStartDate] = useState()
+  const [finishDate, setFinishDate] = useState()
 
 
   return (
@@ -27,7 +27,7 @@ const Cockpit = () => {
           <SearchBar setSearchInput={setSearchInput} />
         </div>
         <div className='date-selector-filter'>
-          <DateRangeSelector setStartDate={setStartDate} setFinishDate={setFinishDate} />
+          <DateRangeSelector setStartDate={setStartDate} setFinishDate={setFinishDate} startDate={startDate}/>
         </div>
       </div>
       <EventCards selectedLocation={selectedLocation} searchInput={searchInput} startDate={startDate} finishDate={finishDate} />

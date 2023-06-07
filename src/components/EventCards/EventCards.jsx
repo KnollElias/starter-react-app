@@ -31,18 +31,35 @@ const EventCards = ({
     if (searchInput.length !== 0) {
       return event.name.toLowerCase().includes(searchInput.toLowerCase());
     }
-    if (selectedLocation) {
+    // if (selectedLocation) {
+    // }
+  });
+  const filterByDate = events.filter((event) => {
+    if (startDate && finishDate) {
+      return (
+        Date.now(event.startTime) > Date.now(startDate) &&
+        Date.now(event.endTime) < Date.now(finishDate)
+      );
+    } else {
+      return false;
     }
   });
+  useEffect(() => {
+    if (filteredEvents && searchInput !== "") {
+      setEvents(filteredEvents);
+    } else {
+      setEvents(referenceData);
+    }
+  }, [searchInput]);
 
-  // useEffect(() => {
-  //   if (filteredEvents && searchInput !== "") {
-  //     setEvents(filteredEvents);
-  //   } else {
-  //     setEvents(referenceData);
-  //   }
-  // }, []);
-
+  useEffect(() => {
+    if (startDate && finishDate && filterByDate.length) {
+      setEvents(filterByDate);
+    } else {
+      setEvents(referenceData);
+    }
+  }, [startDate, finishDate]);
+  console.log(filterByDate);
   return (
     <div className="event-cards-container">
       {isError && (
