@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import uri from "../../service/server";
 import objectFilter from "filtered-object";
-import CardComponent from "../../components/Card";
+import CardComponent from "../../components/Cards/UeberCard/UeberCardIndex";
 import { Grid } from "@mui/material";
 const BASE_URL = uri.uri;
 

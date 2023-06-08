@@ -7,8 +7,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { CardHeader } from "@mui/material";
 import { EditButton } from "./CardIcons";
-import Content from "./Content";
-import UpdateForm from "./UpdateForm";
+import Content from "./UeberCardContent";
+import UpdateForm from "./UeberCardUpdateForm";
 import { useForm } from "react-hook-form";
 function CardComponent({
   title,

@@ -1,0 +1,12 @@
+.location-selector-container {
+  height: 59px;
+  max-width: 248px;
+  margin-left: 81px;
+}
+
+.location-selector-item {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
