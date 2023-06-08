@@ -32,9 +32,17 @@ const Profile = () => {
   };
   React.useEffect(async () => {
     const response = await api_service.get("/users");
+    if(stuff === 'kinder') {
+      const filteredByUser = response.data.filter(user => user.userType === 'User')
+      setUsers(filteredByUser);
 
-    setUsers(response.data);
-  }, []);
+    }
+    else{
+      const filteredByUser = response.data.filter(user => user.userType !== 'User')
+      setUsers(filteredByUser);
+    }
+    
+  }, [stuff]);
 
   return (
     <Grid
