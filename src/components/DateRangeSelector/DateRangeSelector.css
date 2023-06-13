@@ -2,6 +2,20 @@
   display: flex;
 }
 
+.react-datepicker-wrapper input[type="text"] {
+  border: none;
+}
+
 .start-date-selector {
-  margin-right: 10px;
+  border-radius: 16px;
+  border: none;
+}
+
+.finish-date-selector {
+  border-radius: 16px;
+  border: none;
+}
+
+.MuiFormControl-root {
+  background: rgba(255, 255, 255, 0.65);
 }

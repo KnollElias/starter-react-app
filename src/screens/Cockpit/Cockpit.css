@@ -1,13 +1,32 @@
 .filter-components-container {
-  width: 95%;
-  margin: auto;
+  width: 94%;
+  margin: 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  /* border: 1px solid red; */
+  align-items: center !important;
 }
 
 #search-input-textfield {
   width: 50%;
   margin-right: 20px;
+}
+
+.left-filter-cluster {
+}
+
+.left-filter-cluster-title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  margin-left: 25px;
+}
+
+.right-filter-cluster {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 34vw;
+  margin-right: 30px;
 }

@@ -8,8 +8,10 @@ import TextField from '@mui/material/TextField';
 
 export default function SearchBar({ setSearchInput }) {
     return (
-        <div className='search-bar'>
-            <TextField id="outlined-basic" label="Suchen" variant="outlined" onChange={(e) => setSearchInput(e.target.value)} />
+        <div className='search-bar-input'>
+            <TextField id="outlined-basic" label="Name" variant="outlined" onChange={(e) => setSearchInput(e.target.value)} />
+            {/* <input type='text' placeholder='Name' className='search-bar-input' onChange={(e) => setSearchInput(e.target.value)} /> */}
+
         </div>
     );
 }

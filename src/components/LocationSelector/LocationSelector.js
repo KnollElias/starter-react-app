@@ -15,6 +15,7 @@ const LocationSelector = ({ selectedLocation, setSelectedLocation }) => {
   ];
 
   const handleChangeLocation = (event, selectedValue) => {
+
     setSelectedLocation(selectedValue);
     console.log("selectedLocation", selectedLocation);
   };
@@ -30,6 +31,14 @@ const LocationSelector = ({ selectedLocation, setSelectedLocation }) => {
         />
       </Grid>
     </Grid>
+
+    // <div class="locations-container">
+    //   <button class="location-title" onclick={() => setSelectedLocation("Alle")}><p>Alle</p></button>
+    //   <button class="location-title" onclick={handleChangeLocation("Aesch")}>Aesch</button>
+    //   <button class="location-title" onclick={handleChangeLocation}>Breite</button>
+    //   <button class="location-title" onclick={handleChangeLocation}>St.Johan</button>
+    // </div>
+
 
   );
 };

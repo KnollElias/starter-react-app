@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 //CSS
 import "./Cockpit.css"
 
@@ -16,18 +16,21 @@ const Cockpit = () => {
   const [finishDate, setFinishDate] = useState()
 
 
+  useEffect(() => {
+    console.log("startDate", startDate)
+    console.log("finishDate", finishDate)
+  }, [startDate, finishDate])
+
   return (
     <div style={{ width: "100%", backgroundColor: "#F8EDC8" }}>
       <div className='filter-components-container'>
-        <div className='location-selector-filter-container'>
-          <h1 className='location-selector-filter-title'>Events Filtern aktuell</h1>
+        <div className='left-filter-cluster'>
+          <h1 className='left-filter-cluster-title'>Events Filtern</h1>
           <LocationSelector selectedLocation={selectedLocation} setSelectedLocation={setSelectedLocation} />
         </div>
-        <div className='search-bar-filter'>
-          <SearchBar setSearchInput={setSearchInput} />
-        </div>
-        <div className='date-selector-filter'>
-          <DateRangeSelector setStartDate={setStartDate} setFinishDate={setFinishDate} startDate={startDate}/>
+        <div className='right-filter-cluster'>
+          <DateRangeSelector className='date-selector-filter' setStartDate={setStartDate} setFinishDate={setFinishDate} startDate={startDate} />
+          <SearchBar className='search-bar-filter' setSearchInput={setSearchInput} />
         </div>
       </div>
       <EventCards selectedLocation={selectedLocation} searchInput={searchInput} startDate={startDate} finishDate={finishDate} />

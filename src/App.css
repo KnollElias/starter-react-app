@@ -4,28 +4,22 @@
 
 .App {
   display: flex;
-  width: 100vw; 
+  width: 100vw;
 }
-
-
 
 .sidebar {
-  width: 20vw; 
-  flex-shrink: 0; 
+  width: 16vw;
+  flex-shrink: 0;
 }
-
 
 * {
   box-sizing: border-box;
 }
 
-
 .main {
-  width: 80vw; 
-  background-color: #F8EDC8;
+  width: 84vw;
+  background-color: #f8edc8;
 }
-
-
 
 h1 {
   font-weight: normal;
@@ -46,23 +40,23 @@ h1 {
   color: #61dafb;
 }
 /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #8f54a0 #ffffff;
-  }
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #8f54a0 #ffffff;
+}
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 16px;
-  }
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
 
-  *::-webkit-scrollbar-track {
-    background: #ffffff;
-  }
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
 
-  *::-webkit-scrollbar-thumb {
-    background-color: #8f54a0;
-    border-radius: 10px;
-    border: 3px solid #ffffff;
-  }
+*::-webkit-scrollbar-thumb {
+  background-color: #8f54a0;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}

@@ -13,7 +13,8 @@ const BASE_URL = uri.uri;
 const Speiseplan = () => {
 
   const [selectedLocation, setSelectedLocation] = useState("Alle")
-  const [events, setEvents] = useState([]);
+  const [aboutData, setAboutData] = useState([]);
+  const [referenceAboutData, setReferenceAboutData] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +25,10 @@ const Speiseplan = () => {
         if (response.ok) {
           const data = await response.json();
           console.log("RESPONSE", data);
-          setEvents(objectFilter(data[0], "_id"));
+          // setAboutData(objectFilter(data[0], "_id"));
+          // setReferenceAboutData(objectFilter(data[0], "_id"));
+          setAboutData(data[0]);
+          setReferenceAboutData(data[0]);
         } else {
           const errorStatus = response.status;
           throw new Error(`Failed to fetch data. Status: ${errorStatus}`);
@@ -37,10 +41,24 @@ const Speiseplan = () => {
     fetchData();
   }, []);
 
+  // const filteredAboutData = Object.keys(aboutData).map((item) => {
+  //  console.log(item.)
+  // });
+
+
+  useEffect(() => {
+    console.log("aboutData", aboutData)
+    console.log(typeof aboutData)
+    Object.keys(aboutData).map((item) => {
+      console.log(item.name)
+    })
+  }, [aboutData])
+
+
   return (
     <div>
       <div className='speiseplan-main-container'>
-        <div className='speiseplan-plan-title'>Speiseplan Filtern</div>[]
+        <h1 className='speiseplan-plan-title'>Speiseplan Filtern</h1>
         <LocationSelector selectedLocation={selectedLocation} setSelectedLocation={setSelectedLocation} />
       </div>
 
@@ -53,12 +71,13 @@ const Speiseplan = () => {
           gap: "2.3rem",
         }}
       >
-        {events &&
-          Object.values(events).map(({ name, desc }, index) => (
+        {aboutData &&
+          Object.values(aboutData).map(({ name, desc }, index) => (
             <>
               {name ? (
                 <Grid item>
                   <MealCard
+                    className="meal-card-item"
                     title={name}
                     phoneNumber={desc.split("\n")[0]}
                     emergencyNumber={desc.split("\n")[1]}

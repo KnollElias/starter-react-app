@@ -27,6 +27,19 @@ const EventCards = ({
     });
   }, []);
 
+  const handleDateInput = (inputDate) => {
+    let objectDate = inputDate;
+    let day = objectDate.getDate();
+    let month = objectDate.getMonth();
+    let year = objectDate.getFullYear();
+
+    return `${day}/${month}/${year}`;
+  };
+
+  // useEffect(() => {
+  //   console.log("events", events);
+  // }, [events]);
+
   const filteredEvents = events.filter((event) => {
     if (searchInput.length !== 0) {
       return event.name.toLowerCase().includes(searchInput.toLowerCase());

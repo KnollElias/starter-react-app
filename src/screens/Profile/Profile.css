@@ -1,13 +1,8 @@
-.speiseplan-main-container {
-  width: 94%;
-  margin: 20px;
-}
-
-.speiseplan-plan-title {
+.profile-filter-title {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600 !important;
   font-size: 20px !important;
   line-height: 30px !important;
-  margin-left: 25px !important;
+  color: #3d3d3d;
 }

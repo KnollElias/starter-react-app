@@ -4,29 +4,35 @@ const styles = {
   },
   sidebarElement: {
     marginTop: "10px",
-    display: "flex", 
-    flexDirection: "row", 
-    alignItems: "center", 
-    justifyContent: "flex-start", 
-    width: "100%", 
-    borderRadius: 12.5, 
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    width: "100%",
+    borderRadius: 12.5,
     height: "50px",
   },
   logoImage: {
-    width: "30px", 
-    height: "30px", 
+    width: "30px",
+    height: "30px",
     margin: "10px",
   },
   text: {
-    margin: "10px",
+    margin: "16px",
+    fontFamily: "Poppins",
+    fontStyle: "normal",
+    fontSize: "14px",
+    fontWeight: "500",
+    lineHeight: "20px",
+    color: "#999999"
   },
   borderContainer: {
     display: "flex",
-    width: '100%', 
-    height: "100vh", 
+    width: '100%',
+    height: "100vh",
   },
   border: {
-    flex: '0 0 10%', 
+    flex: '0 0 10%',
     backgroundColor: 'white',
   },
   sidebar: {
@@ -35,14 +41,14 @@ const styles = {
     flexDirection: 'column',
     height: '100%',
     justifyContent: 'space-between',
-  },  
+  },
   logoSidebar: {
     marginTop: "50px",
     marginBottom: "50px",
     width: '100%',
   },
   footer: {
-    marginBottom: 50/2,
+    marginBottom: 50 / 2,
     backgroundColor: "transparent",
   }
 };

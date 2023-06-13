@@ -14,27 +14,37 @@ export default function DateRangeSelector({
   setFinishDate,
   startDate,
 }) {
+
+  const handleDateInput = (inputDate) => {
+    let objectDate = inputDate
+    let day = objectDate.getDate();
+    let month = objectDate.getMonth();
+    let year = objectDate.getFullYear();
+
+    return `${day}-${month}-${year}`;
+  }
+
+
   return (
     <div className="date-selector-container">
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DemoContainer components={["DatePicker"]}>
           <div className="start-date-selector">
             <DatePicker
-              label="Startdatum"
-              onChange={(e) => {
-                setStartDate(e.$d);
-              }}
+              label="Datum von"
+              onChange={(e) => setStartDate(handleDateInput(e.$d))}
             />
           </div>
 
           <div className="finish-date-selector">
             <DatePicker
-              label="Enddatum"
-              onChange={(e) => setFinishDate(e.$d)}
+              label="Datum bis"
+              onChange={(e) => setFinishDate(handleDateInput(e.$d))}
             />
           </div>
         </DemoContainer>
       </LocalizationProvider>
     </div>
+
   );
 }

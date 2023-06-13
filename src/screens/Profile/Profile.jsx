@@ -1,5 +1,6 @@
 import { Divider, Grid, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
+import "./Profile.css";
 import ProfileCard from "../../components/ProfileCard";
 import Tabs from "../../components/TabComponent";
 import ApiService from "../../service/BaseService";
@@ -32,16 +33,17 @@ const Profile = () => {
   };
   React.useEffect(async () => {
     const response = await api_service.get("/users");
-    if(stuff === 'kinder') {
-      const filteredByUser = response.data.filter(user => user.userType === 'User')
+    if (stuff === "kinder") {
+      const filteredByUser = response.data.filter(
+        (user) => user.userType === "User"
+      );
       setUsers(filteredByUser);
-
-    }
-    else{
-      const filteredByUser = response.data.filter(user => user.userType !== 'User')
+    } else {
+      const filteredByUser = response.data.filter(
+        (user) => user.userType !== "User"
+      );
       setUsers(filteredByUser);
     }
-    
   }, [stuff]);
 
   return (
@@ -56,7 +58,11 @@ const Profile = () => {
       }}
     >
       <Grid>
-        <Typography variant="h6" width={"100%"}>
+        <Typography
+          className="profile-filter-title"
+          variant="h6"
+          width={"100%"}
+        >
           Profile Filtern
         </Typography>
       </Grid>
